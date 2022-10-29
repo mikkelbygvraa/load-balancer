@@ -73,11 +73,11 @@ public class WeatherForecastController : ControllerBase
 
         if (2 < stationId)
         {
-            _logger.LogWarning($"Wrong station Id request from {clientIP}");
+            _logger.LogWarning($"Wrong stationId request from {clientIP}");
         }
         else
         {
-            _logger.LogDebug($"Returning weather data for station no. { stationId }");
+            _logger.LogDebug($"Returning weather data for station no. {stationId}");
 
             return Enumerable.Range(1, 2).Select(index => new WeatherForecast
             {
