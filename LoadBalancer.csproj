@@ -13,17 +13,29 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyVersion>1.0.1.1</AssemblyVersion> 
-    <FileVersion>1.0.1.1</FileVersion> 
-    <InformationalVersion>1.0.0</InformationalVersion> 
-    <Description> 
+    <AssemblyVersion>1.1.1.1</AssemblyVersion>
+    <FileVersion>1.1.1.1</FileVersion>
+    <InformationalVersion>1.1.0</InformationalVersion>
+    <Description>
+	  1.1.0 NLog Added to App
       1.0.0 Updated with new Semantics 
       0.9.0 Load Balancer Added to App 
     </Description>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog" Version="5.0.5" />
+    <PackageReference Include="NLog.Targets.Loki" Version="1.4.5" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="NLog.config"> 
+      <CopyToOutputDirectory>
+        PreserveNewest
+      </CopyToOutputDirectory> 
+    </None>
   </ItemGroup>
 
 </Project>
