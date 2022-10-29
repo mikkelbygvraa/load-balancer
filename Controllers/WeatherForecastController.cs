@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.Features;
 using System.Diagnostics;
 using System.Net;
 
@@ -70,7 +69,9 @@ public class WeatherForecastController : ControllerBase
         var theData = new List<WeatherForecast>();
         var clientIP = HttpContext.Connection.RemoteIpAddress?.MapToIPv4();
 
-        if (stationId > 2)
+        Console.WriteLine("");
+
+        if (2 < stationId)
         {
             _logger.LogWarning($"Wrong station Id request from {clientIP}");
         }
